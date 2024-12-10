@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Terms = () => {
   return (
@@ -87,18 +88,22 @@ const Terms = () => {
             If you have any questions or concerns about these terms, feel free to contact us at:
           </p>
           <p className="mt-4 text-gray-600">
-            Email: <a href="mailto:support@weatherx.com" className="text-blue-500 underline">support@weatherx.com</a>
+            Email:{" "}
+            <Link href="mailto:support@weatherx.com">
+              <span className="text-blue-500 underline cursor-pointer">
+                support@weatherx.com
+              </span>
+            </Link>
           </p>
         </div>
       </section>
 
       <div className="text-center mt-12">
-        <a
-          href="/"
-          className="bg-blue-500 text-white py-3 px-6 rounded-lg text-lg font-medium hover:bg-blue-600 transition duration-300"
-        >
-          Back to Home
-        </a>
+        <Link href="/">
+          <span className="bg-blue-500 text-white py-3 px-6 rounded-lg text-lg font-medium hover:bg-blue-600 transition duration-300 cursor-pointer">
+            Back to Home
+          </span>
+        </Link>
       </div>
     </div>
   );

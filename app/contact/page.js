@@ -37,22 +37,18 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent page reload
+    e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
     setSubmitted(true);
-
-    // Clear form after submission
     setFormData({
       name: '',
       email: '',
       message: '',
     });
-
-    // Hide success message after 5 seconds
     setTimeout(() => setSubmitted(false), 5000);
   };
 
@@ -62,7 +58,7 @@ const Contact = () => {
         Contact Us
       </h1>
       <p className="text-center text-lg text-gray-600 mb-12">
-        We'd love to hear from you! Reach out with your feedback or questions.
+        We would love to hear from you! Reach out with your feedback or questions.
       </p>
 
       <div className="flex flex-col md:flex-row md:space-x-8">
@@ -71,12 +67,14 @@ const Contact = () => {
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">Send us a Message</h2>
           {submitted && (
             <p className="text-green-600 mb-4 transition-opacity duration-500 opacity-100">
-              Thank you for contacting us! We’ll get back to you soon.
+              Thank you for contacting us! We will get back to you soon.
             </p>
           )}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-gray-700">Name</label>
+              <label htmlFor="name" className="block text-gray-700">
+                Name
+              </label>
               <input
                 type="text"
                 id="name"
@@ -90,7 +88,9 @@ const Contact = () => {
               {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
             </div>
             <div>
-              <label htmlFor="email" className="block text-gray-700">Email</label>
+              <label htmlFor="email" className="block text-gray-700">
+                Email
+              </label>
               <input
                 type="email"
                 id="email"
@@ -104,7 +104,9 @@ const Contact = () => {
               {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
             </div>
             <div>
-              <label htmlFor="message" className="block text-gray-700">Message</label>
+              <label htmlFor="message" className="block text-gray-700">
+                Message
+              </label>
               <textarea
                 id="message"
                 value={formData.message}
@@ -132,15 +134,11 @@ const Contact = () => {
           <ul className="space-y-4">
             <li>
               <span className="font-semibold text-gray-800">Email:</span>{' '}
-              <a href="mailto:support@weatherx.com" className="text-indigo-600 hover:underline">
-                support@weatherx.com
-              </a>
+              <span className="text-indigo-600">support@weatherx.com</span>
             </li>
             <li>
               <span className="font-semibold text-gray-800">Phone:</span>{' '}
-              <a href="tel:+1234567890" className="text-indigo-600 hover:underline">
-                +1 (234) 567-890
-              </a>
+              <span className="text-indigo-600">+1 (234) 567-890</span>
             </li>
           </ul>
         </div>

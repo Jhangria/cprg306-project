@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Privacy = () => {
   return (
@@ -93,18 +94,24 @@ const Privacy = () => {
             Have questions or concerns about this Privacy Policy? Reach out to us:
           </p>
           <p className="mt-4 text-gray-600">
-            Email: <a href="mailto:support@weatherx.com" className="text-blue-500 underline">support@weatherx.com</a>
+            Email:{' '}
+            <a
+              href="mailto:support@weatherx.com"
+              className="text-blue-500 underline"
+            >
+              support@weatherx.com
+            </a>
           </p>
         </div>
       </section>
 
       <div className="text-center mt-12">
-        <a
+        <Link
           href="/"
           className="bg-blue-500 text-white py-3 px-6 rounded-lg text-lg font-medium hover:bg-blue-600 transition duration-300"
         >
           Back to Home
-        </a>
+        </Link>
       </div>
     </div>
   );

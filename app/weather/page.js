@@ -11,34 +11,28 @@ const Weather = () => {
   const [error, setError] = useState(null); // State to track error messages
 
   const fetchWeather = async (event) => {
-    return{
-      current: {
-        temp_c: 20,
-        wind_mph: 5
+    try {
+      const weather = await fetch(
+        `http://api.weatherapi.com/v1/current.json?key=50a8f093542045308dd184124240912&q=${event}`
+      );
+
+      const response = await weather.json();
+
+      // Check for errors in the API response
+      if (response.error) {
+        setError(response.error.message); // Set error message for UI
+        return null;
       }
+
+      // Clear any existing errors on success
+      setError(null);
+      return response;
+    } catch (err) {
+      const errorMessage =
+        err.message || 'An unexpected error occurred while fetching weather data.';
+      setError(errorMessage); // Update error state for UI
+      return null; // Do not log the error in the console
     }
-    // try {
-    //   const weather = await fetch(
-    //     `http://api.weatherapi.com/v1/current.json?key=50a8f093542045308dd184124240912&q=${event}`
-    //   );
-
-    //   const response = await weather.json();
-
-    //   // Check for errors in the API response
-    //   if (response.error) {
-    //     setError(response.error.message); // Set error message for UI
-    //     return null;
-    //   }
-
-    //   // Clear any existing errors on success
-    //   setError(null);
-    //   return response;
-    // } catch (err) {
-    //   const errorMessage =
-    //     err.message || 'An unexpected error occurred while fetching weather data.';
-    //   setError(errorMessage); // Update error state for UI
-    //   return null; // Do not log the error in the console
-    // }
   };
 
   useEffect(() => {
