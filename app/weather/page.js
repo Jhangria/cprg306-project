@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const Weather = () => {
   const [event, setEvent] = useState('');
@@ -8,7 +9,7 @@ const Weather = () => {
   const [toronto, setToronto] = useState();
   const [nyc, setNyc] = useState();
   const [weather, setWeather] = useState();
-  const [error, setError] = useState(null); // State to track error messages
+  const [error, setError] = useState(null);
 
   const fetchWeather = async (event) => {
     try {
@@ -18,20 +19,17 @@ const Weather = () => {
 
       const response = await weather.json();
 
-      // Check for errors in the API response
       if (response.error) {
-        setError(response.error.message); // Set error message for UI
+        setError(response.error.message);
         return null;
       }
 
-      // Clear any existing errors on success
       setError(null);
       return response;
     } catch (err) {
-      const errorMessage =
-        err.message || 'An unexpected error occurred while fetching weather data.';
-      setError(errorMessage); // Update error state for UI
-      return null; // Do not log the error in the console
+      const errorMessage = err.message || 'An unexpected error occurred while fetching weather data.';
+      setError(errorMessage);
+      return null;
     }
   };
 
@@ -53,12 +51,12 @@ const Weather = () => {
     setEvent(e.target.value);
     if (e.target.value.length <= 0) {
       setWeather(undefined);
-      setError(null); // Clear error when input is cleared
+      setError(null);
     }
   };
 
   const handleClick = async () => {
-    setError(null); // Clear previous errors
+    setError(null);
     let w = await fetchWeather(event);
     if (w) {
       setWeather(w);
@@ -97,14 +95,12 @@ const Weather = () => {
               </button>
             </div>
 
-            {/* Show Error Message */}
             {error && (
               <div className="text-red-500 mb-6">
                 <p>{error}</p>
               </div>
             )}
 
-            {/* Show Weather Data */}
             {weather && event.length > 0 && !error && (
               <div className="mb-6">
                 The weather of {event} is {weather.current.temp_c} &#8451; and
@@ -115,10 +111,13 @@ const Weather = () => {
           <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
             <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
               <div className="rounded-lg h-64 overflow-hidden">
-                <img
-                  alt="content"
-                  className="object-cover object-center h-full w-full"
+                <Image
+                  alt="Edmonton Weather"
                   src="https://a.cdn-hotels.com/gdcs/production37/d923/eaf5e729-c1f9-47be-9452-e07760970d8b.jpg"
+                  layout="responsive"
+                  width={500}
+                  height={300}
+                  className="object-cover object-center"
                 />
               </div>
               <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
@@ -132,10 +131,13 @@ const Weather = () => {
             </div>
             <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
               <div className="rounded-lg h-64 overflow-hidden">
-                <img
-                  alt="content"
-                  className="object-cover object-center h-full w-full"
+                <Image
+                  alt="Toronto Weather"
                   src="https://4kwallpapers.com/images/wallpapers/toronto-skyline-skyscrapers-canada-cityscape-night-lights-6000x4000-2118.jpg"
+                  layout="responsive"
+                  width={500}
+                  height={300}
+                  className="object-cover object-center"
                 />
               </div>
               <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
@@ -149,10 +151,13 @@ const Weather = () => {
             </div>
             <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
               <div className="rounded-lg h-64 overflow-hidden">
-                <img
-                  alt="content"
-                  className="object-cover object-center h-full w-full"
+                <Image
+                  alt="New York Weather"
                   src="https://lovingnewyork.es/wp-content/uploads/2016/02/empire-state-mirador-161004120416001.jpeg"
+                  layout="responsive"
+                  width={500}
+                  height={300}
+                  className="object-cover object-center"
                 />
               </div>
               <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
