@@ -39,7 +39,7 @@ export default function Home() {
             <div className="p-4 lg:w-1/3 sm:w-1/2">
               <div className="h-full bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition duration-300">
                 <div className="inline-block w-16 h-16 rounded-full bg-gray-200 mb-4">
-                  <img
+                  <Image
                     src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
                     alt="Emma Johnson"
                     className="w-full h-full rounded-full object-cover"
@@ -55,7 +55,7 @@ export default function Home() {
             <div className="p-4 lg:w-1/3 sm:w-1/2">
               <div className="h-full bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition duration-300">
                 <div className="inline-block w-16 h-16 rounded-full bg-gray-200 mb-4">
-                  <img
+                  <Image
                     src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
                     alt="Liam Brown"
                     className="w-full h-full rounded-full object-cover"
@@ -71,7 +71,7 @@ export default function Home() {
             <div className="p-4 lg:w-1/3 sm:w-1/2">
               <div className="h-full bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition duration-300">
                 <div className="inline-block w-16 h-16 rounded-full bg-gray-200 mb-4">
-                  <img
+                  <Image
                     src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
                     alt="Sophia Williams"
                     className="w-full h-full rounded-full object-cover"
