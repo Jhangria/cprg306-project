@@ -43,6 +43,8 @@ export default function Home() {
                   <Image
                     src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
                     alt="Emma Johnson"
+                    width={400}
+                    height={400}
                     className="w-full h-full rounded-full object-cover"
                   />
                 </div>
@@ -59,6 +61,8 @@ export default function Home() {
                   <Image
                     src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
                     alt="Liam Brown"
+                    width={400}
+                    height={400}
                     className="w-full h-full rounded-full object-cover"
                   />
                 </div>
@@ -75,6 +79,9 @@ export default function Home() {
                   <Image
                     src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
                     alt="Sophia Williams"
+                    width={400}
+                    height={400}
+                    
                     className="w-full h-full rounded-full object-cover"
                   />
                 </div>
