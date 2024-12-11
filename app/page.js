@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,12 +22,13 @@ export default function Home() {
           <p className="text-lg sm:text-xl text-center max-w-2xl mb-6">
             Your trusted platform for real-time weather updates and forecasts.
           </p>
-          <a
+          {/* Use Next.js Link for navigation */}
+          <Link
             href="/weather"
             className="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-lg text-lg font-medium transition duration-300"
           >
             Get Started
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -46,12 +48,12 @@ export default function Home() {
                     width={400}
                     height={400}
                     className="w-full h-full rounded-full object-cover"
+                    priority
                   />
                 </div>
                 <h3 className="text-lg font-medium text-gray-800">Emma Johnson</h3>
                 <p className="leading-relaxed text-base mt-2">
-                  WeatherX has been a lifesaver. I rely on it every day to
-                  plan my activities.
+                  WeatherX has been a lifesaver. I rely on it every day to plan my activities.
                 </p>
               </div>
             </div>
@@ -64,12 +66,12 @@ export default function Home() {
                     width={400}
                     height={400}
                     className="w-full h-full rounded-full object-cover"
+                    priority
                   />
                 </div>
                 <h3 className="text-lg font-medium text-gray-800">Liam Brown</h3>
                 <p className="leading-relaxed text-base mt-2">
-                  The accuracy and simplicity of WeatherX make it my go-to
-                  weather app.
+                  The accuracy and simplicity of WeatherX make it my go-to weather app.
                 </p>
               </div>
             </div>
@@ -81,12 +83,14 @@ export default function Home() {
                     alt="Sophia Williams"
                     width={400}
                     height={400}
-                    
                     className="w-full h-full rounded-full object-cover"
+                    priority
                   />
                 </div>
                 <h3 className="text-lg font-medium text-gray-800">Sophia Williams</h3>
-                <p className="leading-relaxed text-base mt-2">A user-friendly design and reliable updates make WeatherX indispensable.</p>
+                <p className="leading-relaxed text-base mt-2">
+                  A user-friendly design and reliable updates make WeatherX indispensable.
+                </p>
               </div>
             </div>
           </div>
@@ -101,13 +105,11 @@ export default function Home() {
               About WeatherX
             </h2>
             <p className="leading-relaxed text-lg mb-6 text-gray-700 text-center">
-              Stay informed with WeatherX, your trusted platform for accurate,
-              real-time weather updates and forecasts. Powered by WeatherAPI,
-              we deliver precise data on current conditions, hourly updates, and
-              extended forecasts.
+              Stay informed with WeatherX, your trusted platform for accurate, real-time weather updates and forecasts.
+              Powered by WeatherAPI, we deliver precise data on current conditions, hourly updates, and extended forecasts.
             </p>
             <div className="text-center">
-              <a
+              <Link
                 href="/about"
                 className="text-white bg-blue-500 py-2 px-6 rounded hover:bg-blue-600 transition duration-300 inline-flex items-center"
               >
@@ -123,7 +125,7 @@ export default function Home() {
                 >
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
