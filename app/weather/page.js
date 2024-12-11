@@ -9,7 +9,7 @@ const Weather = () => {
   const [toronto, setToronto] = useState();
   const [nyc, setNyc] = useState();
   const [weather, setWeather] = useState();
-  const [error, setError] = useState(null); // State to track error messages
+  const [error, setError] = useState(null);
 
   const fetchWeather = async (event) => {
     try {
@@ -19,20 +19,18 @@ const Weather = () => {
 
       const response = await weather.json();
 
-      // Check for errors in the API response
       if (response.error) {
-        setError(response.error.message); // Set error message for UI
+        setError(response.error.message);
         return null;
       }
 
-      // Clear any existing errors on success
       setError(null);
       return response;
     } catch (err) {
       const errorMessage =
         err.message || 'An unexpected error occurred while fetching weather data.';
-      setError(errorMessage); // Update error state for UI
-      return null; // Do not log the error in the console
+      setError(errorMessage);
+      return null;
     }
   };
 
@@ -54,12 +52,12 @@ const Weather = () => {
     setEvent(e.target.value);
     if (e.target.value.length <= 0) {
       setWeather(undefined);
-      setError(null); // Clear error when input is cleared
+      setError(null);
     }
   };
 
   const handleClick = async () => {
-    setError(null); // Clear previous errors
+    setError(null);
     let w = await fetchWeather(event);
     if (w) {
       setWeather(w);
@@ -98,14 +96,12 @@ const Weather = () => {
               </button>
             </div>
 
-            {/* Show Error Message */}
             {error && (
               <div className="text-red-500 mb-6">
                 <p>{error}</p>
               </div>
             )}
 
-            {/* Show Weather Data */}
             {weather && event.length > 0 && !error && (
               <div className="mb-6">
                 The weather in {event} is {weather.current.temp_c}&#8451;, and the wind speed is {weather.current.wind_mph} mph.
@@ -117,7 +113,7 @@ const Weather = () => {
               <div className="rounded-lg h-64 overflow-hidden">
                 <Image
                   alt="Edmonton"
-                  src="/images/edmonton.jpg"
+                  src="https://media.istockphoto.com/photos/walterdale-bridge-sunset-picture-id1130763630?b=1&k=20&m=1130763630&s=170667a&w=0&h=wnX2bFThv3lgKeTtDjn3hwgEpgmSchL82zNwzA5UWY8="
                   width={400}
                   height={300}
                   className="object-cover object-center h-full w-full"
@@ -136,7 +132,7 @@ const Weather = () => {
               <div className="rounded-lg h-64 overflow-hidden">
                 <Image
                   alt="Toronto"
-                  src="/images/toronto.jpg"
+                  src="https://images.unsplash.com/photo-1632857997897-9418428d7368?blend=000000&blend-alpha=10&blend-mode=normal&blend-w=1&crop=faces%2Cedges&h=630&mark=https:%2F%2Fimages.unsplash.com%2Fopengraph%2Flogo.png&mark-align=top%2Cleft&mark-pad=50&mark-w=64&w=1200&auto=format&fit=crop&q=60&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzA0Nzc2MDk2fA&ixlib=rb-4.0.3"
                   width={400}
                   height={300}
                   className="object-cover object-center h-full w-full"
@@ -155,7 +151,7 @@ const Weather = () => {
               <div className="rounded-lg h-64 overflow-hidden">
                 <Image
                   alt="New York"
-                  src="/images/newyork.jpg"
+                  src="http://images.unsplash.com/photo-1570304816841-906a17d7b067?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8bmV3JTIweW9yayUyMHNreWxpbmV8fDB8fHx8MTYyOTI5MzM0OA&ixlib=rb-1.2.1&q=80&w=1080"
                   width={400}
                   height={300}
                   className="object-cover object-center h-full w-full"
