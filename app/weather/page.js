@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const Weather = () => {
   const [event, setEvent] = useState('');
@@ -78,7 +79,7 @@ const Weather = () => {
                 WeatherX
               </h1>
               <p className="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">
-                Search for a Location and we will fetch the weather for you
+                Search for a location, and we&apos;ll fetch the weather for you.
               </p>
               <input
                 value={event}
@@ -107,60 +108,65 @@ const Weather = () => {
             {/* Show Weather Data */}
             {weather && event.length > 0 && !error && (
               <div className="mb-6">
-                The weather of {event} is {weather.current.temp_c} &#8451; and
-                the wind speed is {weather.current.wind_mph} mph.
+                The weather in {event} is {weather.current.temp_c}&#8451;, and the wind speed is {weather.current.wind_mph} mph.
               </div>
             )}
           </div>
           <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
             <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
               <div className="rounded-lg h-64 overflow-hidden">
-                <img
-                  alt="content"
+                <Image
+                  alt="Edmonton"
+                  src="/images/edmonton.jpg"
+                  width={400}
+                  height={300}
                   className="object-cover object-center h-full w-full"
-                  src="https://a.cdn-hotels.com/gdcs/production37/d923/eaf5e729-c1f9-47be-9452-e07760970d8b.jpg"
                 />
               </div>
               <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
-                Edmonton ({edmonton && edmonton.current?.temp_c} &#8451;)
+                Edmonton ({edmonton && edmonton.current?.temp_c}&#8451;)
               </h2>
               {edmonton && (
                 <p className="text-base leading-relaxed mt-2">
-                  The weather in Edmonton is {edmonton.current.temp_c}°C, and the wind speed is {edmonton.current.wind_mph} mph.
+                  The weather in Edmonton is {edmonton.current.temp_c}&#8451;, and the wind speed is {edmonton.current.wind_mph} mph.
                 </p>
               )}
             </div>
             <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
               <div className="rounded-lg h-64 overflow-hidden">
-                <img
-                  alt="content"
+                <Image
+                  alt="Toronto"
+                  src="/images/toronto.jpg"
+                  width={400}
+                  height={300}
                   className="object-cover object-center h-full w-full"
-                  src="https://4kwallpapers.com/images/wallpapers/toronto-skyline-skyscrapers-canada-cityscape-night-lights-6000x4000-2118.jpg"
                 />
               </div>
               <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
-                Toronto ({toronto && toronto.current?.temp_c} &#8451;)
+                Toronto ({toronto && toronto.current?.temp_c}&#8451;)
               </h2>
               {toronto && (
                 <p className="text-base leading-relaxed mt-2">
-                  The weather in Toronto is {toronto.current.temp_c}°C, and the wind speed is {toronto.current.wind_mph} mph.
+                  The weather in Toronto is {toronto.current.temp_c}&#8451;, and the wind speed is {toronto.current.wind_mph} mph.
                 </p>
               )}
             </div>
             <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
               <div className="rounded-lg h-64 overflow-hidden">
-                <img
-                  alt="content"
+                <Image
+                  alt="New York"
+                  src="/images/newyork.jpg"
+                  width={400}
+                  height={300}
                   className="object-cover object-center h-full w-full"
-                  src="https://lovingnewyork.es/wp-content/uploads/2016/02/empire-state-mirador-161004120416001.jpeg"
                 />
               </div>
               <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
-                New York ({nyc && nyc.current?.temp_c} &#8451;)
+                New York ({nyc && nyc.current?.temp_c}&#8451;)
               </h2>
               {nyc && (
                 <p className="text-base leading-relaxed mt-2">
-                  The weather in NYC is {nyc.current.temp_c}°C, and the wind speed is {nyc.current.wind_mph} mph.
+                  The weather in NYC is {nyc.current.temp_c}&#8451;, and the wind speed is {nyc.current.wind_mph} mph.
                 </p>
               )}
             </div>
