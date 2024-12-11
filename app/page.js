@@ -48,8 +48,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-medium text-gray-800">Emma Johnson</h3>
                 <p className="leading-relaxed text-base mt-2">
-                  "WeatherX has been a lifesaver. I rely on it every day to
-                  plan my activities."
+                  WeatherX has been a lifesaver. I rely on it every day to
+                  plan my activities.
                 </p>
               </div>
             </div>
@@ -64,8 +64,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-medium text-gray-800">Liam Brown</h3>
                 <p className="leading-relaxed text-base mt-2">
-                  "The accuracy and simplicity of WeatherX make it my go-to
-                  weather app."
+                  The accuracy and simplicity of WeatherX make it my go-to
+                  weather app.
                 </p>
               </div>
             </div>
@@ -79,10 +79,7 @@ export default function Home() {
                   />
                 </div>
                 <h3 className="text-lg font-medium text-gray-800">Sophia Williams</h3>
-                <p className="leading-relaxed text-base mt-2">
-                  "A user-friendly design and reliable updates make WeatherX
-                  indispensable."
-                </p>
+                <p className="leading-relaxed text-base mt-2">A user-friendly design and reliable updates make WeatherX indispensable.</p>
               </div>
             </div>
           </div>
